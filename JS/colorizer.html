@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Colorizer</title>
+  </head>
+  <body>
+    <h2 id="colorizeMe"><!-- JS MAGIC GOES HERE-->></h2>
+    <script>
+      /* THIS FUNCTION COLOLRIZS A STRING OF TEXT INPUT -- IT SEARCHES THAT STRING FOR ANY CHARACTER IN SECOND STRING AND ATTACHES THE SPECIFIED
+      COLOR TO THE ORIGINAL STRING ONCE PARSED.
+      
+      THIS CODE WAS ORIGINALLY SOURCED FROM THE SVELTEKIT_V2 IMPLEMENTATION
+      OF THE ADICAPR.IO HOMEPAGE */
+
+      function colorizer(string, find, color) {
+        let characters = string.split(""); // Split the string into an array of characters
+
+        for (let i = 0; i < characters.length; i++) {
+          if (find.indexOf(characters[i]) !== -1) {
+            characters[
+              i
+            ] = `<span style="color: ${color};">${characters[i]}</span>`;
+          }
+        }
+        return characters.join(""); // Join the characters back into a string
+      }
+
+      //The following is purely to force it to run
+      const selection = document.querySelector("#colorizeMe");
+      const execute = colorizer(
+        "This is a Colorful String",
+        "aeiou",
+        "#FF00B4"
+      );
+      selection.innerHTML = execute;
+    </script>
+  </body>
+</html>
