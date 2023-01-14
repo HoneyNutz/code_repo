@@ -23,6 +23,13 @@ function colorizer(string, find, color) {
 }
 ```
 
+## Explanation Notes
+
+Assuming `string` is "This is a Colorful String", `find` is "aeiou", and `color` is "#FF00B4"
+
+> characters = [t],[h],[i],[s],[],[i],[s]...,[i],[n],[g]
+> The first step creates an array of character using the `split` method. Since "" is declared it will make an array at the character level. Next we enter a `for` loop that iterates against each character. The `if` statement checks to see if a value of the current character exists in the `find` string -- if it does it returns a colorized character, otherwise it returns a standard character.
+
 ## To Test:
 
 ### HTML
@@ -39,7 +46,3 @@ const selection = document.querySelector("#colorizeMe");
 const execute = colorizer("This is a Colorful String", "aeiou", "#FF00B4");
 selection.innerHTML = execute;
 ```
-
-## Additional Notes
-
-None
