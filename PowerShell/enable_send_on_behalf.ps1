@@ -1,8 +1,11 @@
 # Connect to Active Directory
 Import-Module ActiveDirectory
 
-# Get all users in Active Directory
-$users = Get-ADUser -Filter *
+# Define the company name to search for
+$companyName = "MetaPhase Consulting, LLC"
+
+# Search for users with the specified company name
+$users = Get-ADUser -Filter {company -eq $companyName}
 
 # Get the current users who have send on behalf permissions
 $currentUsers = Get-Mailbox -Identity "no-reply@metaphaseconsulting.com" | Select-Object -ExpandProperty GrantSendOnBehalfTo
