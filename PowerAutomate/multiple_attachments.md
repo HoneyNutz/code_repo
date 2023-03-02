@@ -22,7 +22,7 @@ Type: Array;
 Value: "blank";
 ```
 
-- **LOOP:** Apply to Each (loop)
+- **LOOP:** Apply to Each
   - **Step:** Get Attachment Content
 
 ```js
@@ -32,7 +32,8 @@ Id: ID;
 File Identifier: Id; //from get attachments
 ```
 
-- **Step:** Append to Array Variable
+- **LOOP:** Apply to Each (continued)
+  - **Step:** Append to Array Variable
 
 ```js
 Name: Attachments;
