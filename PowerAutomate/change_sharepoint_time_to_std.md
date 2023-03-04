@@ -1,10 +1,6 @@
 # This expression will format your sharepoint date into a common format
 
-## Structure
-
-This expression will reformat a date into a normal value
-
-### PROCESS STEPS
+## PROCESS STEPS
 
 - **Step:** Any
 - **Type:** Expression

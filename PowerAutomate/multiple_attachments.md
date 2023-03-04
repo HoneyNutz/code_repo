@@ -1,10 +1,6 @@
 # This codeblock attaches MULTIPLE attachments to an email/approval
 
-## Structure
-
-This Snip will iterate through an array of attachments
-
-### PROCESS STEPS
+## PROCESS STEPS
 
 - **Step:** Get Attachments
 
