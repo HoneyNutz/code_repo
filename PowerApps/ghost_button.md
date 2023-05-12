@@ -17,7 +17,7 @@ This Snip is based on a primary button (btn_main) and an icon (icon_btn which wo
 - **DisabledColor:** Transparent
 - **DisabledFill:** Transparent
 - **HoverColor:** Transparent
-- **HoverFill:** RGBA(0,0,0,0.05)
+- **HoverFill:** RGBA(0,0,0,0.1)
 - **PressedColor:** Transparent
 - **PressedFill:** Transparent
 
