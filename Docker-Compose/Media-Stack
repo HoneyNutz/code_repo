@@ -1,0 +1,123 @@
+---
+version: "3.9"
+name: media-stack
+services:
+  qbittorrent:
+    container_name: qbittorrent
+    image: lscr.io/linuxserver/qbittorrent:latest
+    networks:
+      - media_network
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ="Africa/Maputo"
+      - WEBUI_PORT=5080
+    volumes:
+      - qbittorrent-config:/config
+      - torrent-downloads:/downloads
+    ports:
+      - 5080:5080
+      - 6881:6881
+      - 6881:6881/udp
+    restart: unless-stopped
+  flaresolverr:
+    # DockerHub mirror flaresolverr/flaresolverr:latest
+    image: ghcr.io/flaresolverr/flaresolverr:latest
+    container_name: flaresolverr
+    environment:
+      - LOG_LEVEL=${LOG_LEVEL:-info}
+      - LOG_HTML=${LOG_HTML:-false}
+      - CAPTCHA_SOLVER=${CAPTCHA_SOLVER:-none}
+      - TZ=Europe/London
+    ports:
+      - "${PORT:-8191}:8191"
+    restart: unless-stopped
+  readarr:
+    image: lscr.io/linuxserver/readarr:nightly
+    container_name: readarr
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=Africa/Maputo
+    volumes:
+      - /path/to/data:/config
+
+      - torrent-downloads:/downloads
+    ports:
+      - 8787:8787
+    restart: unless-stopped
+    networks:
+      - media_network
+  radarr:
+    container_name: radarr
+    image: lscr.io/linuxserver/radarr:latest
+    networks:
+      - media_network
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ="Africa/Maputo"
+    ports:
+      - 7878:7878
+    volumes:
+      - radarr-config:/config
+      - torrent-downloads:/downloads
+    restart: unless-stopped
+  sonarr:
+    image: linuxserver/sonarr:latest
+    container_name: sonarr
+    networks:
+      - media_network
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ="Africa/Maputo"
+    volumes:
+      - sonarr-config:/config
+      - torrent-downloads:/downloads
+    ports:
+      - 8989:8989
+    restart: unless-stopped
+  prowlarr:
+    container_name: prowlarr
+    image: linuxserver/prowlarr:latest
+    networks:
+      - media_network
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ="Africa/Maputo"
+    volumes:
+      - prowlarr-config:/config
+    ports:
+      - 9696:9696
+    restart: unless-stopped
+  jellyfin:
+    image: linuxserver/jellyfin:latest
+    container_name: jellyfin
+    networks:
+      - media_network
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ="Africa/Maputo"
+    volumes:
+      - jellyfin-config:/config
+      - torrent-downloads:/data
+    #devices:
+    #  - /dev/videoN:/dev/videoN
+    ports:
+      - 8096:8096
+      - 7359:7359/udp
+      - 8920:8920
+    restart: unless-stopped
+volumes:
+  torrent-downloads: null
+  radarr-config: null
+  sonarr-config: null
+  prowlarr-config: null
+  jellyfin-config: null
+  qbittorrent-config: null
+networks:
+  media_network:
+    external: true
