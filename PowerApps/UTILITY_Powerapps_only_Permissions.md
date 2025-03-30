@@ -9,9 +9,13 @@ Unlike other items, this is a SharePoint Permissions group in SharePoint. Instru
 On your SharePoint site, go to 'Site Settings'.
 Click the 'Site Permissions' link (Under the 'Users and Permissions' section).
 At the top of the page, click on the 'Permissions' tab.
-Click the 'Permission Levels' button (In the 'Manage' group).
-Click 'Add a Permission Level (You may need to go to the Parent Permissions Site)
+Click the 'Permission Levels' button (In the 'Manage' group)
+Make sure you are on the parent site (a noticiation bar will appear if you are not)
+Ideally click the precreated "Contribute" Permissions level and select "make a copy"
 Call the Permissions level "Contribute via PowerApps"
+Uncheck "View Application Pages"
+This will restrict them from accessing via sharpoint -- alternatively you can ensure the following are selected
+
 Select the following in List Permissions:
 
 - Add Items
@@ -22,7 +26,9 @@ Select the following in List Permissions:
 - View Versions
 - Delete Versions
 - Create Alerts
-  Select the following in Site Permissions:
+
+Select the following in Site Permissions:
+
 - Browse Directories
 - Use Self-Service Site Creation
 - View Pages
@@ -31,7 +37,9 @@ Select the following in List Permissions:
 - Use Client Integration Features
 - Open
 - Edit Peronal User Information
-  Select the following in Personal Permissions:
+
+Select the following in Personal Permissions:
+
 - Manage Personal Views
 - Add/Remove Personal Web Parts
 - Update Personal Web Parts
