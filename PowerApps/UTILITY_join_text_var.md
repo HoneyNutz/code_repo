@@ -1,4 +1,4 @@
-# This utility codeblock is to format code to make it more human readable.
+# This utility codeblock is provides options in PowerApps to join code to make it potentially more human readable.
 
 ## Structure
 
@@ -11,8 +11,8 @@ Joining text can be accomplished in 3 different ways, using the `&` operator, `c
 
 ```js
 //SET VARIABLES
-Set(var1 /*code*/);
-Set(var2 /*code*/);
+Set(var1, /*code*/);
+Set(var2, /*code*/);
 ```
 
 ### Useage
@@ -21,12 +21,14 @@ Set(var2 /*code*/);
 - **Data Property:** Any Text Property
 
 ```js
-//Using & Operator
+//Using '&' Operator
 "Hello "&var1&", my name is "&var2&"!";
-
+```
+```js
 //Using Concatenate
 Concatenate("Hello ", var1, ", my name is ",var2,"!");
-
+```
+```js
 //Using $...{} Notation
 $"Hello {var1}, my name is {var2}!"
 ```
