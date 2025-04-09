@@ -1,8 +1,8 @@
-# This utility codeblock is to format code to make it more human readable.
+# This utility codeblock explains the With function that is used to make code more human readable.
 
 ## Structure
 
-The `WITH()` utility function is useful to make complex code more human readable using locally scoped variables to help make a codeblock viable in plain text
+The `WITH()` utility function is useful to make complex code more human readable using locally scoped variables to help make a codeblock viable in plain text.  Locally scoped variables are not impacted elsewhere so you can make complex code blocks helping the user understand whats happening
 
 ### Main Drop Down Box
 
@@ -11,10 +11,11 @@ The `WITH()` utility function is useful to make complex code more human readable
 
 ```js
 With({
-  var1: /*code*/,;
-  var2: /*code*/,;
+  var1: /*code*/ ,;
+  var2: /*code*/ ,;
   varN: /*code*/;
 },
+
 (var1 * var2) /varN
 );
 ```
