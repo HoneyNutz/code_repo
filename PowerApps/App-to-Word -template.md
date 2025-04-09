@@ -1,8 +1,8 @@
-# This utility codeblock is to format code to make it more human readable.
+DELETE
 
 ## Structure
 
-The `WITH()` utility function is useful to make complex code more human readable using locally scoped variables to help make a codeblock viable in plain text
+This is a premium feature 
 
 ### Main Drop Down Box
 
@@ -10,13 +10,7 @@ The `WITH()` utility function is useful to make complex code more human readable
 - **Data Property:** ANY
 
 ```js
-With({
-  var1: /*code*/,;
-  var2: /*code*/,;
-  varN: /*code*/;
-},
-(var1 * var2) /varN
-);
+IN DEV
 ```
 
 ## Additional Notes
