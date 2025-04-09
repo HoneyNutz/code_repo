@@ -1,4 +1,4 @@
-# This codeblock will allow you to create a button with an icon -- use this make that button hoverable
+# This codeblock will allow you to create a button with an icon and allow the user to hover and select all areas of the button (without the layers interacting negatively)
 
 ## Structure
 
@@ -6,7 +6,7 @@ This Snip is based on a primary button (btn_main) and an icon (icon_btn which wo
 
 ### btn_ghost
 
-- **Component Type:** btn
+- **Component Type:** CLASSIC Button
 - **Height:** btn_main.Height
 - **Width:** btn_main.Width
 - **X:** btn_main.X
@@ -34,4 +34,4 @@ Color: If( btn_ghost.Pressed, RGBA(<select color>), RGBA(<select default>))
 
 ## Additional Notes
 
-This Functionality may be OBE -- but currently there is no way to hover color an icon or allow a button to show as hovered when a cursor is over an icon. Using a ghost button allows you to somewhat mimic the fucntionality
+This is used with the CLASSIC button.  The modern button allows icons but as of this time you can not modify the size of the icon.  This code block works in all situations and will allow complete flexibility on designing custom buttons that have iconography and still allow color changes on hover.
